@@ -233,8 +233,8 @@ body {
     object-fit: cover; }
 
 .card {
-  perspective: 100rem;
-  -moz-perspective: 100rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
   position: relative;
   height: 52rem; }
   .card__side {
@@ -244,6 +244,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -325,6 +326,32 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    .card .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.15); }
+      .card .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        .card .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card .card:hover .card .card__side--front {
+        transform: rotateY(0); }
+      .card .card__cta {
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card .card__price-box {
+        margin-bottom: 3rem; }
+      .card .card__price-value {
+        font-size: 4rem; } }
 
 .form__group:not(:last-child) {
   margin-bottom: 2rem; }
@@ -742,7 +769,7 @@ body {
     .navigation__background {
       top: 4.5rem;
       right: 4.5rem; } }
-  @media (max-width: 56.25em) {
+  @media (max-width: 37.5em) {
     .navigation__background {
       top: 3.5rem;
       right: 3.5rem; } }
@@ -778,7 +805,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
-  background-size: 230%;
+  background-size: 220%;
   transition: all 0.4s; }
 
 .navigation__link:hover, .navigation__link:active {
@@ -787,7 +814,7 @@ body {
   transform: translateX(1rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {
-  transform: scale(90); }
+  transform: scale(80); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;

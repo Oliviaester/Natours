@@ -46,7 +46,7 @@
       right: 4.5rem;
     }
 
-    @include respond(tab-port) {
+    @include respond(phone) {
       top: 3.5rem;
       right: 3.5rem;
     }
@@ -93,7 +93,7 @@
         transparent 50%,
         $color-white 50%
       );
-      background-size: 230%;
+      background-size: 220%;
       transition: all 0.4s;
     }
 
@@ -106,7 +106,7 @@
   }
 
   &__checkbox:checked ~ &__background {
-    transform: scale(90);
+    transform: scale(80);
   }
 
   &__checkbox:checked ~ &__nav {
